@@ -1,0 +1,13 @@
+.suchfeld input {
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding: 1vw 2vw;
+  background-color: rgb(85, 82, 76);
+  color: white;
+  opacity: 0.7;
+  margin-bottom: 2vw;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}

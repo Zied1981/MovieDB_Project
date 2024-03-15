@@ -30,13 +30,14 @@ main {
 .btn-container {
   margin-bottom: 5vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
 }
 .btn-container button {
   background-color: rgb(85, 82, 76);
   color: white;
-  padding: 1vw 3vw;
+  padding: 1vw 3.3vw;
   border-radius: 0.5vw;
   opacity: 0.6;
   font-size: 1rem;

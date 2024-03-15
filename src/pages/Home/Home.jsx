@@ -3,9 +3,11 @@ import "./Home.css";
 import movies from "../../components/movieDatabase/movieDatabase";
 import { useEffect, useState } from "react";
 import Stars from "../../components/Stars/Stars";
+import Search from "../../components/Search/Search";
 const Home = () => {
   const [data, setData] = useState(movies);
   const [sort, setSort] = useState("");
+
   useEffect(() => {
     data.sort((a, b) => {
       if (sort === "btn1") {
@@ -70,6 +72,9 @@ const Home = () => {
   return (
     <main>
       <h1>MOVIE FOR YOU</h1>
+
+      <Search />
+
       <div className="btn-container">
         <button onClick={() => setSort("btn1")}>Sort by Date Ascending</button>
 
@@ -78,25 +83,30 @@ const Home = () => {
         <button onClick={() => setSort("btn4")}>A-Z</button>
         <button onClick={() => setSort("btn5")}>Z-A</button>
       </div>
-      <section className="grid-box">
-        {data.map((items, index) => (
-          <article key={index} className="container">
-            <h2>{items.title}</h2>
-            <p>{items.year}</p>
-            <p>{items.director}</p>
-            <p>{items.duration}</p>
-            <p>{items.rate}</p>
-            <Stars rate={items.rate} />
-            <div>
-              {items.genre.map((element, index) => (
-                <div key={index}>
-                  <p>{element}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-        ))}
-      </section>
+
+      {userInput.length > 0 ? (
+        <Search />
+      ) : (
+        <section className="grid-box">
+          {data.map((items, index) => (
+            <article key={index} className="container">
+              <h2>{items.title}</h2>
+              <p>{items.year}</p>
+              <p>{items.director}</p>
+              <p>{items.duration}</p>
+              <p>{items.rate}</p>
+              <Stars rate={items.rate} />
+              <div>
+                {items.genre.map((element, index) => (
+                  <div key={index}>
+                    <p>{element}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
     </main>
   );
 };
