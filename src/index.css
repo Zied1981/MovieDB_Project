@@ -1,27 +1,9 @@
-.grid-box {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2vw;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(46, 46, 46);
-  max-width: 200px;
-  border-radius: 10px;
-  color: white;
-}
-.btn-container {
-  margin-bottom: 10vw;
-  display: flex;
-  justify-content: space-around;
-  gap: 1vw;
-}
-.btn-container button {
-  background-color: rgb(46, 46, 46);
-  color: white;
-  padding: 0.4rem 0.6rem;
-  border-radius: 2vw;
+
+img {
+  max-width: 100%;
 }
