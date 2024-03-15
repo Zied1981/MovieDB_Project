@@ -18,7 +18,7 @@ main {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  background-color: rgba(91, 91, 88, 0.346);
+  background-color: rgba(104, 104, 103, 0.393);
   width: 250px;
   height: 300px;
   border-radius: 10px;
@@ -34,7 +34,7 @@ main {
   gap: 2vw;
 }
 .btn-container button {
-  background-color: rgb(119, 110, 95);
+  background-color: rgb(85, 82, 76);
   color: white;
   padding: 1vw 3vw;
   border-radius: 0.5vw;
