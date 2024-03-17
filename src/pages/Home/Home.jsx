@@ -34,8 +34,6 @@ const Home = () => {
     <main>
       <h1>MOVIE FOR YOU</h1>
 
-      <Search zied={data} />
-
       <div className="btn-container">
         <button onClick={() => setSort("btn1")}>Sort by Date Ascending</button>
 
@@ -44,6 +42,7 @@ const Home = () => {
         <button onClick={() => setSort("btn4")}>A-Z</button>
         <button onClick={() => setSort("btn5")}>Z-A</button>
       </div>
+      <Search zied={data} />
       <div>
         <Moviecard content={data} />
       </div>

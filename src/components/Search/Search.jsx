@@ -26,8 +26,10 @@ const Search = ({ zied }) => {
         /*  value={userInput} */
         onChange={searchAllMovies}
       />
+
       <article>
         {filteredmovie.length > 0 ? (
+          // filterredmovie Var von search component an die moviecard übergeben da alles drin gerendert wird
           <div>
             <Moviecard content={filteredmovie} />
 
@@ -55,10 +57,10 @@ const Search = ({ zied }) => {
             )} */}
           </div>
         ) : (
-          "Not found "
+          <p className="error">Movie Not Found</p>
         )}
       </article>
-      {/*     {filteredmovie > 0 ? <Moviecard /> : "not found"}; */}
+      {/*     {filteredmovie.length > 0 ? <Moviecard /> : "not found"}; */}
     </section>
   );
 };

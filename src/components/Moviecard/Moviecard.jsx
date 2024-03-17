@@ -1,9 +1,12 @@
 import "./Moviecard.css";
 import Stars from "../Stars/Stars";
+import { Link } from "react-router-dom";
+
 const Moviecard = ({ content }) => {
   return (
     <section className="grid-box">
       {content.map((item, index) => (
+        /*  <Link to={"/detail"}> */
         <div className="container" key={index}>
           <h2>{item.title}</h2>
           <p>{item.year}</p>
@@ -18,6 +21,7 @@ const Moviecard = ({ content }) => {
             </div>
           ))}
         </div>
+        /*   </Link> */
       ))}
     </section>
   );
