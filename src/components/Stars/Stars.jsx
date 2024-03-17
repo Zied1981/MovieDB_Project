@@ -14,7 +14,7 @@ const Stars = (props) => {
   return (
     <div className="star-container">
       {rating.map((stars, index) => (
-        <img src={`./public/${stars}`} key={index} alt=" stars" />
+        <img src={`./public/${stars}`} key={index} alt="stars" />
       ))}
     </div>
   );

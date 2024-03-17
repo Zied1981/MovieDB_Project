@@ -2,10 +2,13 @@ import "./Home.css";
 /* import movies from "../../components/movieDatabase/movieDatabase.jsx"; */
 import movies from "../../components/movieDatabase/movieDatabase";
 import { useEffect, useState } from "react";
-import Stars from "../../components/Stars/Stars";
+
 import Search from "../../components/Search/Search";
+import Moviecard from "../../components/Moviecard/Moviecard";
 const Home = () => {
+  //usestate für unsere moviesArray den wir in data speichern.
   const [data, setData] = useState(movies);
+  //usestate für unsere sortier func.
   const [sort, setSort] = useState("");
 
   useEffect(() => {
@@ -22,58 +25,16 @@ const Home = () => {
         return ("" + b.title).localeCompare(a.title);
       }
     });
+    //spread-operator:gibt das selbe array in einer neunen Reihenfolge
+    //zurück und löst hier ein neunen rendering aus.!!!!
     setData([...data]);
   }, [sort]);
-
-  /* const [ascending, setAscending] = useState(false);
-  const [descending, setDescending] = useState(false);
-  const [bestrate, setBestRate] = useState(false);
-  const [az, setAz] = useState(false);
-  const [za, setZa] = useState(false); */
-  /* 
-  useEffect(() => {
-    data.sort((a, b) => {
-      return a.year - b.year;
-    });
-
-    setData([...data]);
-  }, [ascending]);
-
-  useEffect(() => {
-    data.sort((a, b) => {
-      return b.year - a.year;
-    });
-
-    setData([...data]);
-  }, [descending]);
-
-  useEffect(() => {
-    data.sort((a, b) => {
-      return b.rate - a.rate;
-    });
-    setData([...data]);
-  }, [bestrate]);
-  useEffect(() => {
-    data.sort((a, b) => {
-      return ("" + a.title).localeCompare(b.title);
-    });
-
-    setData([...data]);
-  }, [az]);
-
-  useEffect(() => {
-    data.sort((a, b) => {
-      return ("" + b.title).localeCompare(a.title);
-    });
-
-    setData([...data]);
-  }, [za]); */
 
   return (
     <main>
       <h1>MOVIE FOR YOU</h1>
 
-      <Search />
+      <Search zied={data} />
 
       <div className="btn-container">
         <button onClick={() => setSort("btn1")}>Sort by Date Ascending</button>
@@ -83,30 +44,9 @@ const Home = () => {
         <button onClick={() => setSort("btn4")}>A-Z</button>
         <button onClick={() => setSort("btn5")}>Z-A</button>
       </div>
-
-      {userInput.length > 0 ? (
-        <Search />
-      ) : (
-        <section className="grid-box">
-          {data.map((items, index) => (
-            <article key={index} className="container">
-              <h2>{items.title}</h2>
-              <p>{items.year}</p>
-              <p>{items.director}</p>
-              <p>{items.duration}</p>
-              <p>{items.rate}</p>
-              <Stars rate={items.rate} />
-              <div>
-                {items.genre.map((element, index) => (
-                  <div key={index}>
-                    <p>{element}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </section>
-      )}
+      <div>
+        <Moviecard content={data} />
+      </div>
     </main>
   );
 };
