@@ -27,7 +27,7 @@ const Search = ({ zied }) => {
         onChange={searchAllMovies}
       />
       <article>
-        {userInput > 0 ? (
+        {filteredmovie.length > 0 ? (
           <div>
             <Moviecard content={filteredmovie} />
 
