@@ -6,7 +6,7 @@ const Moviecard = ({ content }) => {
   return (
     <section className="grid-box">
       {content.map((item, index) => (
-        /*  <Link to={"/detail"}> */
+        /*   <Link to={`/detail/:id`}> */
         <div className="container" key={index}>
           <h2>{item.title}</h2>
           <p>{item.year}</p>
@@ -21,7 +21,7 @@ const Moviecard = ({ content }) => {
             </div>
           ))}
         </div>
-        /*   </Link> */
+        /*         </Link> */
       ))}
     </section>
   );

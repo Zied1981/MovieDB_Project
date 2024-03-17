@@ -13,7 +13,7 @@ const Detail = () => {
 
   return (
     <section className="detail-sec">
-      <h1>Detailpage</h1>
+      <h2>Detailpage</h2>
       <div>
         <p>Title:{filterData.title}</p>
         <p>Director:{filterData.director}</p>
