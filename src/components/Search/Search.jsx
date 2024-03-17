@@ -32,29 +32,6 @@ const Search = ({ zied }) => {
           // filterredmovie Var von search component an die moviecard übergeben da alles drin gerendert wird
           <div>
             <Moviecard content={filteredmovie} />
-
-            {/*  {zied.map((film, index) =>
-              film.title.toLowerCase().includes(userInput.toLowerCase()) ? (
-                <div key={index}>
-                  <h2>{items.title}</h2>
-                  <p>{items.year}</p>
-                  <p>{items.director}</p>
-                  <p>{items.duration}</p>
-                  <p>{items.rate}</p>
-                  <Stars rate={items.rate} />
-                  <div>
-                    {items.genre.map((element, index) => (
-                      <div key={index}>
-                        <p>{element}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                ""
-              )
-
-            )} */}
           </div>
         ) : (
           <p className="error">Movie Not Found</p>

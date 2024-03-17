@@ -16,4 +16,7 @@ function App() {
   );
 }
 
+//zeile 12 mit :id freiwählbar
+//kündigt man dass da was kommt, das selbe muss dann bei der const{}=use Params sein.
+
 export default App;
