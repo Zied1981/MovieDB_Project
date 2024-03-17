@@ -6,22 +6,24 @@ const Moviecard = ({ content }) => {
   return (
     <section className="grid-box">
       {content.map((item, index) => (
-        /*   <Link to={`/detail/:id`}> */
-        <div className="container" key={index}>
-          <h2>{item.title}</h2>
-          <p>{item.year}</p>
-          <p>{item.director}</p>
-          <p>{item.duration}</p>
-          <p>{item.rate}</p>
-          <Stars rate={item.rate} />
+        <Link key={index} to={`/detail/${item.title}`}>
+          <div>
+            <div className="container">
+              <h2>{item.title}</h2>
+              <p>{item.year}</p>
+              <p>{item.director}</p>
+              <p>{item.duration}</p>
+              <p>{item.rate}</p>
+              <Stars rate={item.rate} />
 
-          {item.genre.map((item, index) => (
-            <div key={index}>
-              <p>{item}</p>
+              {item.genre.map((item, index) => (
+                <div key={index}>
+                  <p>{item}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        /*         </Link> */
+          </div>
+        </Link>
       ))}
     </section>
   );
