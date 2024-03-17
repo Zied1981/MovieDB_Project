@@ -1,8 +1,6 @@
 import "./Moviecard.css";
 import Stars from "../Stars/Stars";
 const Moviecard = ({ content }) => {
-  console.log(content);
-
   return (
     <section className="grid-box">
       {content.map((item, index) => (

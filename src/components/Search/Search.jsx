@@ -14,8 +14,8 @@ const Search = ({ zied }) => {
       items.title.toLowerCase().includes(inputVal.toLowerCase())
     );
     setFilteredmovie(filteredmovie);
-    console.log(filteredmovie);
   };
+  console.log(filteredmovie);
 
   return (
     <section className="suchfeld">
@@ -29,7 +29,9 @@ const Search = ({ zied }) => {
       <article>
         {userInput > 0 ? (
           <div>
-            {zied.map((film, index) =>
+            <Moviecard content={filteredmovie} />
+
+            {/*  {zied.map((film, index) =>
               film.title.toLowerCase().includes(userInput.toLowerCase()) ? (
                 <div key={index}>
                   <h2>{items.title}</h2>
@@ -49,7 +51,8 @@ const Search = ({ zied }) => {
               ) : (
                 ""
               )
-            )}
+
+            )} */}
           </div>
         ) : (
           "Not found "
